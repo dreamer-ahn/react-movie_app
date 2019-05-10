@@ -162,11 +162,9 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <Movie></Movie>
-        <Movie></Movie>
-        <Movie></Movie>
-        <Movie></Movie>
-        <Movie></Movie>
+        {movies.map((movie, index) => {
+          return (<Movie title={movie.title} poster={movie.poster} key={index}></Movie>);
+        })}
       </div>
     );
   }
