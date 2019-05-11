@@ -15,15 +15,15 @@ class Movice extends Component{
     render() {
         return (
             <div className="Movie">
-                <div className="Movie__Columns">
+                <div className="Movie__Column">
                     <img className="Movie__Poster" src={this.props.poster} alt={this.props.title} />
                 </div>
-                <div className="Movie__Columns">
+                <div className="Movie__Column">
                     <h1>{this.props.title}</h1>
-                    <div className="Movie__Genre">
+                    <div className="Movie__Genres">
                         {this.props.genres.map((genre, index) => <span className="Movie__Genre" key={index}>{genre}</span>)}
                     </div>
-                    <p>
+                    <div className="Movie__Synopsis">
                         <LinesEllipsis
                             text={this.props.synopsis}
                             maxLine='3'
@@ -32,7 +32,7 @@ class Movice extends Component{
                             basedOn='letters'
                             />
                         
-                    </p>
+                    </div>
                 </div>
             </div>
         );
